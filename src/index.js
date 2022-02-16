@@ -1,8 +1,8 @@
 import "./style.scss";
 import LoadNavbar from "./modules/nav";
-import CategoryList from "./modules/categoryLists";
+import SideNav from "./modules/sideNav";
 import ListBox from "./modules/formBox";
 
 LoadNavbar();
-CategoryList();
+SideNav();
 ListBox();

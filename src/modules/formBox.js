@@ -20,20 +20,32 @@ const Label = (text, context) => {
   return label;
 };
 
+const Button = (text, type) => {
+  const button = document.createElement("button");
+  button.setAttribute("type", type);
+  button.textContent = text;
+
+  return button;
+};
+
 const Form = () => {
   const form = document.createElement("form");
   form.classList.add("form");
   const task = Input("Task Name", "text", "title");
   const taskLabel = Label("Title: ", "title");
 
-  const taskDescription = Input("Description", "text", "description");
-  const taskDescriptionLabel = Label("Description: ", "description");
-
   form.appendChild(taskLabel);
   form.appendChild(task);
 
+  const taskDescription = Input("Description", "text", "description");
+  const taskDescriptionLabel = Label("ToDo: ", "description");
+
   form.appendChild(taskDescriptionLabel);
   form.appendChild(taskDescription);
+
+  const button = Button("Submit", "submit");
+
+  form.appendChild(button);
 
   return form;
 };

@@ -1,0 +1,91 @@
+$yel: rgb(241, 241, 107);
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+// NAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAVNAV
+
+.nav {
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 5px $yel;
+    margin: 0.5rem;
+  }
+}
+
+// Make bottom nav on mobile
+@media screen and (max-width: 768px) {
+  .nav {
+    bottom: 0;
+  }
+}
+
+// SIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDE
+
+.left-nav {
+  position: absolute;
+  background-color: $yel;
+  width: 20vw;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+// MAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAIN
+
+.form-area {
+  margin-top: 64px;
+  margin-left: 20vw;
+  height: 100vh;
+  background-color: grey;
+  text-align: center;
+}
+
+.form-inner-area {
+  width: 400px;
+  height: 300px;
+  padding: 1rem;
+  background-color: $yel;
+  border-radius: 10px;
+}
+
+// .hidden {
+//   display: none;
+// }
+
+.form {
+  text-shadow: 1px 1px 5px $yel;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-label {
+  margin: 1rem;
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+//FORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORM

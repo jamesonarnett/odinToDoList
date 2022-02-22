@@ -10,8 +10,30 @@ const Navbar = (title) => {
   return navbar;
 };
 
+const Button = (text, type) => {
+  const button = document.createElement("button");
+  button.setAttribute("type", type);
+  button.classList.add("btnME");
+  button.textContent = text;
+
+  return button;
+};
+
+const openForm = () => {
+  const form = document.querySelector(".form-area");
+  form.classList.remove("hidden");
+  form.classList.add("active");
+};
+
 const LoadNavbar = () => {
   const navbar = Navbar("OdinList");
+
+  const button = Button("Add Item");
+
+  button.setAttribute("id", "add-item-button");
+  button.addEventListener("click", openForm);
+
+  navbar.appendChild(button);
   main.appendChild(navbar);
 };
 

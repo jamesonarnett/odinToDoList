@@ -7,7 +7,7 @@ body {
 
 //BUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTONBUTTON
 
-.btn {
+.btnME {
   display: inline-block;
   padding: 0.46em 1.6em;
   border: 0.1em solid #ffffff;
@@ -15,7 +15,6 @@ body {
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: white;
   text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
@@ -23,7 +22,7 @@ body {
   text-align: center;
   transition: all 0.15s;
 }
-.btn:hover {
+.btnME:hover {
   cursor: pointer;
   text-shadow: 0 0 2em rgba(255, 255, 255, 1);
   color: black;
@@ -31,7 +30,7 @@ body {
   background-color: white;
 }
 @media all and (max-width: 30em) {
-  .btn {
+  .btnME {
     display: block;
     margin: 0.4em auto;
   }
@@ -46,12 +45,19 @@ body {
   top: 0;
   width: 100%;
   height: fit-content;
+  display: flex;
+  justify-content: center;
+  padding: 0.2rem;
 
   h1 {
     font-size: 2.5rem;
     text-align: center;
     text-shadow: 1px 1px 5px $yel;
     margin: 0.5rem;
+  }
+
+  button {
+    margin-left: 2rem;
   }
 }
 // SIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDESIDE
@@ -61,7 +67,7 @@ body {
   background-color: $yel;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
+  margin-top: 70px;
   h2 {
     font-size: 2rem;
     padding: 0.3rem 0.5rem;
@@ -92,24 +98,26 @@ body {
 // MAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAINMAIN
 
 .form-area {
-  margin-top: 64px;
   height: 100vh;
-  background-color: grey;
   text-align: center;
 }
 
 .form-inner-area {
   max-width: 400px;
-  height: 300px;
   padding: 1rem;
   background-color: $yel;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: 0rem auto;
 }
 
-// .hidden {
-//   display: none;
-// }
+.hidden {
+  display: none;
+}
+
+.active {
+  background-color: black;
+  opacity: 90%;
+}
 
 .form {
   text-shadow: 1px 1px 5px $yel;
@@ -139,3 +147,21 @@ body {
 }
 
 //FORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORMFORM
+
+#toDoBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  // margin-left: 20vw;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.todo-card {
+  max-width: 40%;
+  margin: 0 auto;
+  // display: flex;
+  // justify-content: center;
+  background-color: grey;
+}

@@ -26,13 +26,15 @@ const Label = (text, context) => {
 const Button = (text, type) => {
   const button = document.createElement("button");
   button.setAttribute("type", type);
-  button.classList.add("btn");
+  button.classList.add("btnME");
   button.textContent = text;
 
   return button;
 };
 
 // COMPONENTS DONE  COMPONENTS DONE  COMPONENTS DONE  COMPONENTS DONE  COMPONENTS DONE
+
+// formADD and formCLOSE
 
 const addToDo = () => {
   const t = document.getElementById("title");
@@ -43,10 +45,22 @@ const addToDo = () => {
   const content = c.value;
   const priority = p.value;
 
-  console.log(content);
   const todo = toDoFactory(title, content, priority);
+  todo.createCard();
+};
 
-  console.log(todo.title);
+const closeForm = () => {
+  const t = document.getElementById("title");
+  const c = document.getElementById("description");
+  const p = document.getElementById("priority");
+
+  t.value = "";
+  c.value = "";
+  p.value = "";
+
+  const form = document.querySelector(".form-area");
+  form.classList.add("hidden");
+  form.classList.remove("active");
 };
 
 const Form = () => {
@@ -75,19 +89,27 @@ const Form = () => {
   form.appendChild(priorityLabel);
   form.appendChild(priority);
 
-  const button = Button("Submit", "submit");
-  button.addEventListener("click", (e) => {
+  const buttonSubmit = Button("Submit", "submit");
+  buttonSubmit.addEventListener("click", (e) => {
     e.preventDefault();
     addToDo();
+    closeForm();
   });
 
-  form.appendChild(button);
+  const buttonX = Button("Close");
+  buttonX.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeForm();
+  });
+
+  form.appendChild(buttonSubmit);
+  form.appendChild(buttonX);
 
   return form;
 };
 
 const FormBox = () => {
-  const main = document.getElementById("content");
+  const main = document.getElementById("body");
 
   // Create  TWO divs for outer/inner styles
   const areaOuterDiv = listArea();
@@ -101,6 +123,9 @@ const FormBox = () => {
 
   formInnerDiv.appendChild(form);
   areaOuterDiv.appendChild(formInnerDiv);
+
+  areaOuterDiv.classList.add("hidden");
+
   main.appendChild(areaOuterDiv);
 };
 

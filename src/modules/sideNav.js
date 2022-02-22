@@ -18,7 +18,7 @@ const sideHeader = (title) => {
 const Button = (text, type) => {
   const button = document.createElement("button");
   button.setAttribute("type", type);
-  button.classList.add("btn");
+  button.classList.add("btnME");
   button.textContent = text;
 
   return button;

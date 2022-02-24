@@ -1,4 +1,5 @@
 import { toDoFactory } from "./toDoFactory";
+import { saveItem, toDoList } from "./localStoraage";
 
 const listArea = () => {
   const area = document.createElement("div");
@@ -46,6 +47,11 @@ const addToDo = () => {
   const priority = p.value;
 
   const todo = toDoFactory(title, content, priority);
+
+  toDoList.push(todo);
+  console.log(toDoList);
+  saveItem();
+
   todo.createCard();
 };
 
@@ -59,6 +65,14 @@ const closeForm = () => {
   p.value = "";
 
   const form = document.querySelector(".form-area");
+  const innerForm = document.querySelector(".form-inner-area");
+
+  form.addEventListener("click", (e) => {
+    if (e.target == form) {
+      form.classList.add("hidden");
+      form.classList.remove("active");
+    }
+  });
   form.classList.add("hidden");
   form.classList.remove("active");
 };

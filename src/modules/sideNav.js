@@ -5,16 +5,6 @@ const sideArea = () => {
   return area;
 };
 
-const sideHeader = (title) => {
-  const header = document.createElement("h2");
-  header.textContent = title;
-
-  const button = Button("Add List+", "button");
-  header.appendChild(button);
-
-  return header;
-};
-
 const Button = (text, type) => {
   const button = document.createElement("button");
   button.setAttribute("type", type);
@@ -22,6 +12,21 @@ const Button = (text, type) => {
   button.textContent = text;
 
   return button;
+};
+
+const sideHeader = (title) => {
+  const headerArea = document.createElement("div");
+  headerArea.classList.add("side-area-header");
+
+  const header = document.createElement("h2");
+  header.textContent = title;
+
+  const button = Button("Add List+");
+
+  headerArea.appendChild(header);
+  headerArea.appendChild(button);
+
+  return headerArea;
 };
 
 const SideNav = () => {
